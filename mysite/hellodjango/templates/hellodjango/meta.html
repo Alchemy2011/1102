@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Meta{% endblock %}
+{% block content %}
+    <h1>Welcome to the page at {{ request.path }}</h1>
+    <h1>Host is {{ request.get_host }}, is secure {{ request.is_secure }}</h1>
+    <br />
+    <h2>request.GET = {{ request.GET }}</h2>
+    <br />
+    <h2>request.POST = {{ request.POST }}</h2>
+    {% for k, v in values %}
+        <tr>
+            <td>{{ k }}</td>
+            <td>{{ v }}</td>
+        </tr>
+        <hr>
+    {% endfor %}
+{% endblock %}

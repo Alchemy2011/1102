@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Contact us</h1>
+{% if errors %}
+    <ul>
+        {% for error in errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+<form action="/x/contact" method="post">
+    <p><label for="Subject">Subject: </label><input id="Subject" type="text" name="subject" value="{{ subject }}"></p>
+    <p><label for="e-mail">Your e-mail (optional): </label><input id="e-mail" type="text" name="email" value="{{ email }}"></p>
+    <p><label for="Message">Message: </label><textarea id="Message" name="message" rows="10" cols="50">{{ message }}</textarea></p>
+    <input type="submit" value="Submit">
+</form>
+</body>
+</html>

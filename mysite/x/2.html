@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <ul>
+    {% if athlete_list %}
+        {% for athlete in athlete_list  reversed %}
+{#        <li>{{ athlete.name }}</li>#}
+            <h1>{{ athlete.name }}</h1>
+            <ul>{% for sport in athlete.sports_played %}
+                <li>{{ sport }}</li>
+            {% endfor %}
+            </ul>
+        {% endfor %}
+        {% else %}
+            <p>There are no athletes. Only computer programmers.</p>
+    {% endif %}
+    </ul>
+    {% for athlete in athlete_list %}
+        <p>{{ athlete.name }}</p>
+    {% empty %}
+        <p>There are no athletes. Only computer programmers.</p>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,5 @@
+port = 8000
+lqr = ['python', 'c++', 'java', 'php', 'ios']
+hello ={
+'a':1, 'b':2, 'c':3
+}
